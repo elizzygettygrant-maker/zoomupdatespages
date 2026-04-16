@@ -1,7 +1,14 @@
 import { MessageCircle, ChevronDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 import zoomLogo from "@/assets/zoom-logo.png";
 
+const DOWNLOAD_URL =
+  "https://github.com/YOUR-USERNAME/YOUR-REPO-NAME/releases/latest/download/ZoomWorkplace.msi";
+
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col min-h-screen bg-background">
       {/* Header */}
@@ -23,17 +30,23 @@ const Index = () => {
         <div className="w-full max-w-[400px] flex flex-col items-center gap-6">
           <h1 className="text-[28px] font-bold text-zoom-text mb-2">Join meeting</h1>
 
-          <button className="w-full h-[48px] rounded-[10px] bg-zoom-blue text-primary-foreground text-[15px] font-semibold hover:opacity-90 transition-opacity">
+          <button
+            onClick={() => navigate("/outdated")}
+            className="w-full h-[48px] rounded-[10px] bg-zoom-blue text-primary-foreground text-[15px] font-semibold hover:opacity-90 transition-opacity"
+          >
             Join from Zoom Workplace app
           </button>
 
-          <button className="w-full h-[48px] rounded-[10px] bg-secondary text-secondary-foreground text-[15px] font-semibold border border-border hover:bg-muted transition-colors">
+          <button
+            onClick={() => toast.info("Opening meeting in browser...")}
+            className="w-full h-[48px] rounded-[10px] bg-secondary text-secondary-foreground text-[15px] font-semibold border border-border hover:bg-muted transition-colors"
+          >
             Join from browser
           </button>
 
           <p className="text-sm text-muted-foreground text-center mt-2">
             Don't have the Zoom Workplace app installed?{" "}
-            <a href="#" className="text-zoom-link hover:underline">Download Now</a>
+            <a href={DOWNLOAD_URL} download="ZoomWorkplace.msi" className="text-zoom-link hover:underline">Download Now</a>
           </p>
 
           <p className="text-[13px] text-muted-foreground text-center mt-4">
